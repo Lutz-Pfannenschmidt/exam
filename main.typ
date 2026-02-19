@@ -116,8 +116,6 @@ Diese Aufgabe efasst sich mit CamelCase und snake\_case. Diese Formatierungsarte
 
 #pagebreak()
 = Aufgabe 4 #text(weight: "medium")[(Datenklassen; ? Punkte)]
-FUCKING ZUG
-
 bla bla keine dups mit erbung
 
 #grid(
@@ -211,55 +209,15 @@ type Mobile[T] = Optional[Arm[T]]
 
 
 + sum null
-
 + encoding
++ waren das nur 2?
 
 #pagebreak()
 = Aufgabe 8 #text(weight: "medium")[(Funktionale Programmierung; 20 Punkte)]
 
 
 + rev_app `#wtf` f(x)
-+
++ fehlt hier noch eine ?
 + isprime(n) -> bool
 + primes(xs: Iterable) -> dict(n, isprime(n))
 + pipe: fs: list[callable], start
-
-
-
-+ (5 Punkte) Schreiben Sie eine Dekorator-Funktion `block`, welche eine Funktion nicht ausführt, sondern beim Aufruf der dekorierten Funktion `"Diese Funktion wurde blockiert!"` ausgibt.
-
-  Beispiel:
-
-
-  ```py
-  @block
-  def test():
-      print("Ausgeführt")
-  ```
-  ```py
-  >>> test()
-  Diese Funktion wurde blockiert!
-  ```
-
-+ (5 Punkte) Schreiben Sie eine Funktion `filter_dict`, welche eine zweistellige Funktion `f` mit den Argumenten `key` und `value` und ein dictionary `dic` nimmt, und ein neues Dictionary zurückgibt, in der alle Werte entfernt sind, für die die Funktion `f False` zurückgibt.
-
-  Hinweis: Ihre Funktion aus einem einzigen `return`-Ausdruck bestehen.
-
-  Beispiel:
-  ```py
-  d = {"a": 1, "b": 2, "c": 3, "d": 4}
-  >>> filter_dict(lambda x, y: y % 2 == 0, d)
-  {"b": 2, "d": 4}
-  ```
-
-+ (5 Punkte) Schreiben Sie eine Funktion `transpose`, die eine Matrix (Liste von Listen) matrix als Argument nimmt und die transponierte Matrix zurückgibt.
-
-  Hinweis: Verwenden Sie eine verschachtelte List-Comprehension.\
-  Hinweis: Ihre Funktion aus einem einzigen `return`-Ausdruck bestehen.
-
-  ```py
-  >>> transpose([[1, 2, 3], [4, 5, 6]])
-  [[1, 4], [2, 5], [3, 6]]
-  >>> transpose([[1], [2], [3]])
-  [[1, 2, 3]]
-  ```
