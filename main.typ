@@ -22,7 +22,7 @@
 #set enum(numbering: "(a)")
 
 
-#strong[Das ist nur eine inoffizielle Gedächtnisklausur. Sie kann Fehler enthalten. Keine Haftung. ]
+#strong[Das ist nur eine inoffizielle Gedächtnisklausur. Sie kann Fehler enthalten. Keine Haftung. Die Punkte pro Aufgaben sind geschätzt.]
 
 #line(length: 100%, stroke: 0.25pt)
 
