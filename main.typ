@@ -15,11 +15,14 @@
   prof: "Prof. Dr. Peter Thiemann",
   semester: "WS 2025/2026",
   title: [Gedächtnisklausur],
-  left_header: [\ Autor: \ FTF ],
-  header: ([EidP], [Klausur WS 25/26], ""),
+  left_header: [Autor: \ Felix Dehon\ Lutz Pfannenschmidt ],
+  header: ([EidP], [Gedächtnisklausur WS 25/26], ""),
 )
 
 #set enum(numbering: "(a)")
+
+
+#strong[Das ist nur eine inoffizielle Gedächtnisklausur. Sie kann Fehler enthalten. Keine Haftung. ]
 
 #line(length: 100%, stroke: 0.25pt)
 
@@ -36,6 +39,7 @@
 #v(1fr)
 #align(center)[*Es sind maximal 150 Punkte zu erreichen.*]
 #pagebreak()
+
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.10": *
 #show: codly-init.with()
@@ -47,13 +51,15 @@
   number-format: none,
   // stroke: none,
 )
+
+
 = Aufgabe 1 #text(weight: "medium")[(Warm-Up; 20 Punkte)]
 
-+ (? Punkte) Definieren Sie eine Funktion `my_len()`, die einen string `a` als Argument entgegennimmt und die länge von `a` zurückgibt.
++ (4 Punkte) Definieren Sie eine Funktion `my_len()`, die einen string `a` als Argument entgegennimmt und die länge von `a` zurückgibt.
 
-  *Sie dürfen die Built-In Methode len(str) _NICHT_ verwenden.*
+  *Sie dürfen die buildtin Methode len(str) nicht verwenden.*
 
-+ (? Punkte) Implementieren sie die Funktion `fac` die eine natürliche Zahl `n` als Argument entgegennimmt und ihre Fakultät zurückgibt.
++ (4 Punkte) Implementieren sie die Funktion `fac` die eine natürliche Zahl `n` als Argument entgegennimmt und ihre Fakultät zurückgibt.
 
   Die Fakultät sei definiert als:
 
@@ -66,129 +72,145 @@
 
   *Hinweis: Sie dürfen annehmen, dass n größer gleich 0 ist.*
 
-+ (? Punkte) Definieren Sie einen Typalias MyOptional, der einen Typparameter `T` besitzt und einen Wert beschreibt, der entweder vom Typ `T` oder None ist.
++ (2 Punkte) Definieren Sie einen Typalias MyOptional, der einen Typparameter `T` besitzt und einen Wert beschreibt, der entweder vom Typ `T` oder `None` ist.
 
-+ (? Punkte) Gegeben sei die rekursive Definition eines Bin ̈arbaumes in Python:
-```python
-@dataclass
-class Node[T]:
-  mark: T
-  left: "Tree[T]"
-  right: "Tree[T]"
++ (5 Punkte) Gegeben sei die rekursive Definition eines Binärbaumes in Python:
+  ```python
+  @dataclass
+  class Node[T]:
+    mark: T
+    left: "Tree[T]"
+    right: "Tree[T]"
 
-type Tree[T] = Optional[Node[T]]
-```
+  type Tree[T] = Optional[Node[T]]
+  ```
 
-Ändern sie diese Definition so, dass der Baum eine beliebige, endliche Anzahl an Kindern annehmen kann.
+  Ändern sie diese Definition so, dass der Baum eine beliebige, aber endliche Anzahl an Kindern annehmen kann.
 
-+ (? Punkte) Implementieren sie eine Funktion die ein Iterierbares Objekt annimmt und einen Iterator zurückgibt, der die gleichen Elemente des Eingabeobjektes in der gleichen Reihenfolge wiedergibt.
++ (5 Punkte) Implementieren sie eine Funktion die ein Iterierbares Objekt annimmt und einen Iterator zurückgibt, der die Elemente des Eingabeobjektes in der gleichen Reihenfolge wiedergibt.
 
 
 
 #pagebreak()
-= Aufgabe 2 #text(weight: "medium")[(Dictionaries; 20? Punkte)]
+= Aufgabe 2 #text(weight: "medium")[(Dictionaries; 20 Punkte)]
 
 Diese Aufgabe soll Universitätskurse simulieren. Es seien zwei Dictionaries gegeben:
 
-- `courses_rooms` ist ein Dictionary, das zu jedem Kurs (String) als Key den jeweiligen Raum (String) als Value zuordnet.
-- `courses_students` ist ein Dictionary, das zu jedem Kurs (String) als Key die Menge an Studierenden ( string) als Value hat.
+- `courses_rooms` ist ein Dictionary, das jedem Kurs (String) als Key den jeweiligen Raum (String) als Value zuordnet.
+- `courses_students` ist ein Dictionary, das jedem Kurs (String) als Key die Menge an Studierenden ( String) als Value zuordnet.
 
 
 
-+ (? Punkte) Implementieren Sie eine Funktion, die `courses_rooms` und `courses_students` annimmt und diejenigen Kurse in `courses_rooms` zurückgibt, die nicht in `courses_students` sind.
++ (6 Punkte) Implementieren Sie eine Funktion, die `courses_rooms` und `courses_students` annimmt und diejenigen Kurse aus `courses_rooms` zurückgibt, die nicht in `courses_students` vorkommen.
 
-+ (? Punkte) Implementieren Sie eine Funktion, die  `courses_students` , eine Menge an Studierenden `graduates` sowie eine Mindestmenge `min_students` annimmt. Sie soll das Dictionary `courses_students` _inline_ ändern, sodass diejenigen Studierenden entfernt werden, die in `graduates` sind. Die Funktion soll zudem die Menge an Kursen zurückgeben, in denen sich weniger als `min_students` Studierende befinden.
++ (6 Punkte) Implementieren Sie eine Funktion, die  `courses_students` , eine Menge an Studierenden `graduates` sowie eine Mindestmenge `min_students` annimmt. Sie soll das Dictionary `courses_students` _inline_ ändern, sodass diejenigen Studierenden entfernt werden, die in `graduates` sind. Die Funktion soll zudem die Menge an Kursen zurückgeben, in denen sich nach der Änderung weniger als `min_students` Studierende befinden.
 
 
-+ (? Punkte) Implementieren Sie eine Funktion, die `courses_rooms` und `courses_students` sowie eine Mindestmenge `min_students` annimmt. Die Funktion gibt ein Dictionary zurück, die allen Räumen die Menge derjenigen Kursen zuordnet, in denen sich mindetens `min_students` befindent.
++ (8 Punkte) Implementieren Sie eine Funktion, die `courses_rooms` und `courses_students` sowie eine Mindestmenge `min_students` annimmt. Die Funktion soll ein Dictionary zurückgeben, die allen Räumen die Menge derjenigen Kursen zuordnet, die in diesem Raum stattfinden und in denen sich mindestens `min_students` befinden.
 
 #pagebreak()
 = Aufgabe 3 #text(weight: "medium")[(Strings; 10 Punkte)]
 
-Diese Aufgabe efasst sich mit CamelCase und snake\_case. Diese Formatierungsarten sind so definiert:
+Diese Aufgabe befasst sich mit CamelCase und snake\_case. Diese Formatierungsarten sind so definiert:
 
-- snake\_case: String sind im snake\_case Format, wenn es nur aus Kleinbuchstaben und Unterstrichen besteht. Wörter sind mit einem Unterstrich getrennt.
-- CamelCase: String sind im CamelCase Format, wenn Wörter zusammengeschrieben sind und, außer im ersten Wort, der erste Buchstabe des Worte großgeschrieben ist, der Rest kleingeschrieben.
+- snake\_case: Ein String ist im snake\_case Format, wenn es nur aus Kleinbuchstaben und Unterstrichen besteht. Wörter sind mit einem Unterstrich getrennt. Beispeil ist `foo`, `foo_bar` oder `ein_ganzer_satz`.
+- CamelCase: Strings sind im CamelCase Format, wenn die Wörter zusammengeschrieben sind und, außer im ersten Wort, der erste Buchstabe des Wortes großgeschrieben ist, der Rest kleingeschrieben. Beispeile sind `foo`, `fooBar` oder `einGanzerSatz`.
 
 
 + (5 Punke) Implementieren Sie eine Funktion `snake_to_camel`, die einen String im snake\_case Format annimmt und diesen Sting in CamelCase format umwandelt und zurückgibt.
+  ```py
+  >>> snake_to_camel("ein_ganzer_satz")
+  'einGanzerSatz'
+  ```
 + (5 Punke) Implementieren Sie eine Funktion `camel_to_snake`, die einen String im CamelCase Format annimmt und diesen Sting in snake\_case format umwandelt und zurückgibt.
+  ```py
+  >>> snake_to_camel("einGanzerSatz")
+  'ein_ganzer_satz'
+  ```
 
 #pagebreak()
-= Aufgabe 4 #text(weight: "medium")[(Datenklassen; ? Punkte)]
-bla bla keine dups mit erbung
+= Aufgabe 4 #text(weight: "medium")[(Datenklassen; 30 Punkte)]
 
-#grid(
-  columns: 2,
-  align(center + horizon, "F\n\nG"),
-  grid(
-    columns: 11,
-    // gutter: 2em,
-    inset: 4pt,
-    ..range(44, step: 2).map(i => align(
-      center + horizon,
+In dieser Aufgabe werden Sitzplätze in Zügen simuliert. Ein Beispiel einer Sitzplatzverteilung ist unten dargestellt. Die grauen Plätze sind Plätze der Ersten Klasse, die restlichen der Zweiten Klasse. Die äußeren Sitze in Fensterplätze (F), die mittleren die Gangplätze (G).
+
+#align(center, grid(
+  columns: 12,
+  gutter: 6pt,
+  rows: (auto, auto, 5pt, auto, auto),
+  ..array
+    .zip(("F", "G", "", "G", "F"), ..range(1, 44, step: 4).map(i => (i, i + 1, "", i + 2, i + 3)))
+    .flatten()
+    .map(i => if type(i) == int {
       rect(
-        str(int(i / 22) + 2 * calc.rem-euclid(i, 22) + 1),
+        fill: if i <= 16 { luma(190) },
         width: 25pt,
         height: 25pt,
-        fill: (if int(i / 22) + 2 * calc.rem-euclid(i, 22) + 1 <= 16 { gray }),
-      ),
-    ))
-  ),
+        stroke: black,
+      )[#align(center + horizon, str(i))]
+    } else { align(center + horizon, [#i]) }),
+))
 
-  v(16pt), [],
-
-  align(center + horizon, "G\n\nF"),
-  grid(
-    columns: 11,
-    // gutter: 2em,
-    inset: 4pt,
-    ..range(44, step: 2).map(i => align(
-      center + horizon,
-      rect(
-        str(int(i / 22) + 2 * calc.rem-euclid(i, 22) + 3),
-        width: 25pt,
-        height: 25pt,
-        fill: (if int(i / 22) + 2 * calc.rem-euclid(i, 22) + 1 <= 16 { gray }),
-      ),
-    )),
-  ),
-)
-
-+ Implementieren sie die Datenklasse `Seat` der die Attribute Sitznummer `num`, welcher Name (String) den Sitz reserviert hat oder None `reversed` und den Wahrheitswert `window`, welcher sperichert, ob der Sitz ein *F*\enstersitz wie im Obrigen Diagramm zu sehen ist.
++ Implementieren sie die Datenklasse `Seat` die eine Sitznummer `num`, der optionale Name `reversed` (String) der Person, die den Sitz reserviert hat (Wenn niemand den Platz reserviert hat, ist `reverved = None`), und den Wahrheitswert `window`, welcher zeigen soll, ob der Sitz ein Fenstersitz ist, wie im obrigen Diagramm zu sehen ist.
 
   `reserved` soll den Standartwert `None` haben und `window` soll automatisch bei erstellung eines `Seat` anhand von `num` bestimmt werden.
 
 + Implementieren sie die Datenklasse `FirstClassSeat`, welche von `Seat` erbt und den Wahrheitswert `desk` speichert, welcher aussagt ob der Sitz einen Tisch hat.
-
-  Alle Sitze in der ersten Klasse mit num <=8 haben Tische.
-
-First Class Seat Seat(desk bool ) num < 8
-
-+ Feedback booked alreadyBooked, invalidSeatNumber
-+ Carriage `__seat_list` `num_first_class_seats` `num_second_class_seats`
-  - %4=0, >=0, list = []
-  - get_by_name
-  - get_by_number
-  - get_all_free_seats
-  - book -> Feedback
+  Alle Sitze in der ersten Klasse mit $"num" <= 8$ haben Tische.
 
 
-#pagebreak()
-= Aufgabe 5 #text(weight: "medium")[(Endrekursion; ? Punkte)]
++ Implementieren Sie einen IntEnum `Feedback`, das Rückgabewerte beschreibt. Es soll die Werte `booked`,  `alreadyBooked`, und `invalidSeatNumber` geben.
 
-bin(0)=""
-bin(2n)=bin(n)+"0"
-bin(2n+1)=bin(n)+"1"
 
-+ (? Punkte) Schreiben Sie eine *rekursive, aber nicht endrekursive* Funktion `to_bin_rec`
++ Implementieren Sie eine Datenklasse `Carriage`, die einen Zugwagon beschreibt. Sie soll einen versteckten Parameter `__seat_list` besitzen, der zwar nicht direkt gesetzt wird, sondern durch die zwei Ganzzahlargumente `num_first_class_seats` und `num_second_class_seats` nach dem obigen Schema generiert wird. Der Konstruktor soll mit asserts sicherstellen, dass die beiden Eingaben durch 4 teilbar und nicht-negativ sind.
 
-+ (? Punkte) Schreiben Sie eine endrekursive Funktion `to_bin_tail_rec`, die sich wie `sum_list_rec` verhält, aber endrekursiv implementiert ist. Verwenden Sie hierzu das in der Vorlesung gezeigte Verfahren mit einem Akkumulator acc als zusätzlichem Argument.
+  + Implementieren Sie eine Methode `get_by_name`, die einen Namen annimt und den Seat zurückgibt, der durch diese Person reserviert wurde. Wenn kein Seat mit diesem Namen reserviert wurde, soll die Methode `None` zurückgeben.
 
-+ (? Punkte) Schreiben Sie eine nicht-rekursive Funktion `to_bin_iter`, die sich wie `to_bin_rec` verhält, aber endrekursiv implementiert ist. Verwenden Sie hierzu das in der Vorlesung gezeigte Verfahren mit einem Akkumulator acc als zusätzlichem Argument.
+  + Implementieren Sie eine Methode `get_by_number`, die eine Stizplatzzahl annimt und den Seat mit der Zahl zurückgibt. Wenn kein Seat mit dieser Zahl existiert, soll die Methode `None` zurückgeben.
+
+  + Implementieren Sie eine Methode `get_all_free_seats`, die die Menge aller freien Sitzplätze zurückgibt.
+
+  + Implementieren Sie eine Methode `book`, die einen Namen `name` und eine Sitzplatzzahl `n` annehmen und den Seat mit der Zahl für diese Person reservieren. Wenn der Seat schon reserviert ist, soll `alreadyBooked` zurückgegeben werden. Wenn die Reservierung erfolgreich durchgeführt wird, soll `booked` zurückgegeben werden. Gibt es keinen Sitzplatz mit der Nummer, soll `invalidSeatNumber` zurückgegeben werden.
+
+
 
 #pagebreak()
-= Aufgabe 6 #text(weight: "medium")[(Mobile und Arsch; ? Punkte)]
+= Aufgabe 5 #text(weight: "medium")[(Endrekursion; 15 Punkte)]
+
+In dieser Aufgabe sollen Sie eine Dezimalzahl in Binärdarstellung umwandeln. Die Umwandlung ist rekursiv definiert als:
+
+$
+  cases(
+    "bin"(0)=\"\",
+    "bin"(2n)="bin"(n)+\"0\" "für" n>0,
+    "bin"(2n+1)="bin"(n)+\"1\"
+  )
+$
+
+
++ (5 Punkte) Schreiben Sie eine *rekursive, aber nicht endrekursive* Funktion `to_bin_rec`, die eine Ganzzahl `n` annimmt und die Binärdarstellung von `n`, wie oben beschrieben, als String zurückgibt.
+
++ (5 Punkte) Schreiben Sie eine *endrekursive* Funktion `to_bin_tail_rec`, die sich wie `sum_list_rec` verhält, aber endrekursiv implementiert ist. Verwenden Sie hierzu das in der Vorlesung gezeigte Verfahren mit einem Akkumulator acc als zusätzlichem Argument.
+
++ (5 Punkte) Schreiben Sie eine *nicht-rekursive* Funktion `to_bin_iter`, die sich wie `to_bin_rec` verhält. Verwenden Sie hierzu das in der Vorlesung gezeigte Verfahren.
+
+```py
+>>> to_bin_rec(0)
+''
+>>> to_bin_rec(1)
+'1'
+>>> to_bin_rec(2)
+'10'
+>>> to_bin_rec(4)
+'100'
+>>> to_bin_rec(4) == to_bin_tail_rec(4) == to_bin_iter(4)
+True
+```
+
+#pagebreak()
+= Aufgabe 6 #text(weight: "medium")[(Rekursion und Bäume; 20 Punkte)]
+
+
+Es sei die rekursive Definition eines Binärbaumes gegeben:
 
 ```py
 @dataclass
@@ -200,24 +222,82 @@ class Arm[T]:
 type Mobile[T] = Optional[Arm[T]]
 ```
 
-+ (5 Punkte) is balanced -> tuple (bool, sum_weight)
-+ (10 Punkte) is_isomorphic -> bool
++ (10 Punkte) Implementieren Sie eine Funktion `is_balanced`, die einen Baum entgegennimmt und entscheidet, ob dieser Baum balanziert ist. Die Funktion soll ein Tuple zurückgeben, dessen erstes Element angibt, ob der Baum balanziert ist und dessen zweites Element das Gesamtgewicht des Baumes angibt, also die Summe der Gewichte der Kinder und der des Knoten selbst. Ein Baum ist balanziert, wenn beide Kinder balanziert sind und deren Gewichte gleich sind. *Verwenden Sie Pattern Matching und Rekursion.*
+  ```py
+  >>> t1 = Arm(4, Arm(3), Arm(1, Arm(1), Arm(1)))
+  >>> is_balanced(t1)
+  True
+  >>> t2 = Arm(0, Arm(3), Arm(5, Arm(5)))
+  >>> is_balanced(t2)
+  False
+  ```
 
++ (10 Punkte) Implementieren sie eine Funktion `is_isomorphic`, die zwei Bäume `m1` und `m2` entgegennimmt und einen Boolean zurückgibt, der angibt, ob die Bäume isomorph sind. Zwei Bäume sind isomorph, wenn Sie die gleiche Struktur haben. Die Isomorphie ist unabhängig von der Reihenfolge der Kinder eines Knotens. *Verwenden Sie Pattern Matching und Rekursion.*
+  ```py
+  >>> m1 = Arm(4, Arm(3), Arm(1, Arm(1), Arm(1)))
+  >>> m2 = Arm(0, Arm(3), Arm(5, Arm(5)))
+  >>> m3 = Arm(10, Arm(1, None, Arm(3)), Arm(4))
+  >>> is_balanced(m1, m2)
+  False
+  >>> is_balanced(m2, m3)
+  True
+  ```
 
 #pagebreak()
 = Aufgabe 7 #text(weight: "medium")[(Generatoren; 20 Punkte)]
 
 
-+ sum null
-+ encoding
-+ waren das nur 2?
++ (10 Punkte) Schreiben Sie eine Generatorfunktion, die ein iterierbares Object aus Ganzzahlen `xs` entgegennimmt und die Indizes zurückgibt, wo die Summe der Elemente von `xs` bis zu diesem Index null ergibt.
+
+  Beispiel:
+  ```py
+  >>> list(sum_null([]))
+  []
+  >>> list(sum_null([2, -2, 2, 3, -5, 6]))
+  [1, 4]
+  ```
+
++ (10 Punkte) Schreiben Sie eine Generatorfunktion die das `run-lenght-encoding` implementiert. Die Funktion nimmt ein iterierbares Object `xs` entgegen und gibt ein Tuple zurück, das für jeden Buchstaben der Eingabe die Anzahl an konsekutiven Wiederholungen dieses Buchstaben angibt.
+
+  Beispiel:
+  ```python
+  >>> list(run_lenght_encoding(""))
+  []
+  >>> list(run_lenght_encoding("aaaabbcaa"))
+  [("a", 4), ("b", 2), ("c", 1), ("a", 2)]
+  >>> list(run_lenght_encoding("161"))
+  [("1", 1), ("6", 1), ("1", 1)]
+  ```
+
 
 #pagebreak()
 = Aufgabe 8 #text(weight: "medium")[(Funktionale Programmierung; 20 Punkte)]
 
+\
+*Implementieren Sie die folgende Aufgabe im funktionalen Stil. Jede Funktion soll nur aus einer `return` Anweisung bestehen.*
 
-+ rev_app `#wtf` f(x)
-+ fehlt hier noch eine ?
-+ isprime(n) -> bool
-+ primes(xs: Iterable) -> dict(n, isprime(n))
-+ pipe: fs: list[callable], start
++ Implementieren Sie eine Funktion `rev_app`, die eine beliebige Funktion `f` und einen Wert `x` annimt, und die Funktion angewendet auf den Eingabewert zurückgibt.
+  ```python
+  >>> rev_app(lambda x: x * 2, 5)
+  10
+  ```
++ Implementieren Sie eine Funktion `isprime`, die eine Ganzzahl `n` annimt, und einen Boolean zurückgibt, der angibt ob die Eingabe prim ist. Eine Zahl ist prim, wenn sie nur durch 1 und sich selbst teilbar ist. *Sie können annehmen, dass die Eingaben größer gleich 2 sind.*
+  ```python
+  >>> isprime(2)
+  True
+  >>> isprime(4)
+  False
+  ```
+
++ Implementieren Sie eine Funktion `primes`, die ein iterierbares Objekt aus Ganzzahlen `xs` annimt, und einen Dictionary zurückgibt, der jeder Zahl aus `xs` einen Boolean zuordnet, der angibt ob die Zahl prim ist.
+  ```python
+  >>> primes([2, 3, 4, 5])
+  {2: True, 3: True, 4: False, 5: True}
+  ```
+
++ Implementieren Sie eine Funktion `pipe`, die ein iterierbares Objekt aus Funktionen `fs` und einen Startwert `start` annimt, und alle Funktionen angewendet auf den Startwert, zurückgibt. Mit der Eingabe $[f_1, f_2, f_3, ...]$ soll $...f_3(f_2(f_1("start")))$ ausgegeben werden
+  ```python
+  >>> pipe([lambda x: x * 2, lambda x: x + 3], 5)
+  13
+  ```
+
