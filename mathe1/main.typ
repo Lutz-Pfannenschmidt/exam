@@ -13,7 +13,7 @@
 )
 #set text(lang: "de")
 #set enum(numbering: "(a)")
-#show math.equation: set text(size: 12pt, stroke: 0.1pt)
+#show math.equation: set text(size: 12pt, weight: 100)
 
 #line(length: 100%, stroke: 0.25pt)
 
