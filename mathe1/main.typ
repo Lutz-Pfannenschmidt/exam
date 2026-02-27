@@ -156,7 +156,7 @@ ihren Graphen zu, indem Sie die jeweils passende Abbildungsvorschrift neben Ihre
 #pagebreak()
 = Aufgabe 3 #text(weight: "medium")[(4 Punkte)]
 
-Beweisen Sie durch vollständige Induktion, dass für alle $n in NN$ die natürliche Zahl $7^n-2^n$ durch $5$ teilbar ist.
+Beweisen Sie durch vollständige Induktion, dass für alle $n in NN$ die natürliche Zahl #box($7^n-2^n$) durch $5$ teilbar ist.
 
 
 #pagebreak()
@@ -164,9 +164,11 @@ Beweisen Sie durch vollständige Induktion, dass für alle $n in NN$ die natürl
 
 Entscheiden Sie, ob die folgenden Reihen konvergieren und beweisen Sie Ihre Antwort:
 
-(1) $sum_(n=1)^(infinity) (sin(1/n))/n$
+#v(1em)
+(1) $display(sum_(n=1)^(infinity) (sin(1/n))/n)$
+#v(1em)
 
-(2) $sum_(n=1)^(infinity) (5/6 + 1/n)^n$
+(2) $display(sum_(n=1)^(infinity) (5/6 + 1/n)^n)$
 
 #pagebreak()
 = Aufgabe 5 #text(weight: "medium")[(4 Punkte)]
@@ -190,8 +192,8 @@ berechnen sie die folgenden Integrale:
 
 #v(12pt)
 
-(1) $integral_0^(pi/2) (sin(x))^2 cos (x) d x$
+(1) $display(integral_0^(pi/2) (sin(x))^2 cos (x) d x)$
 
 #v(12pt)
 
-(2) #text(size: 16pt)[$integral_(-1)^(2) (11-t)/((t-4)(t+3)) d t$]
+(2) $display(integral_(-1)^(2) (11-t)/((t-4)(t+3)) d t)$
